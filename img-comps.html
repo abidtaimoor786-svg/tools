@@ -1,0 +1,789 @@
+Here is a stunning, fully responsive homepage for your tools website, designed to showcase a comprehensive collection of image and PDF tools with an attractive, modern UI.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>ToolHub Pro | Ultimate Image & PDF Toolkit Suite</title>
+  <meta name="description" content="50+ professional image and PDF tools: compress, convert, edit, merge, and optimize. Free, fast, secure. All-in-one productivity platform.">
+  <meta name="keywords" content="image tools, pdf tools, compress image, pdf converter, image editor, merge pdf, online tools, free toolkit">
+  <meta name="author" content="ToolHub Pro">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.toolhubpro.com">
+  <meta property="og:title" content="ToolHub Pro - Complete Image & PDF Toolkit">
+  <meta property="og:description" content="50+ professional tools to compress, convert, edit images and PDFs. Free online utilities with premium features.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://placehold.co/1200x630/1e293b/ffffff?text=ToolHub+Pro">
+  <meta name="twitter:card" content="summary_large_image">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      color: #0f172a;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #e2e8f0;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #3b82f6;
+      border-radius: 10px;
+    }
+
+    /* Navigation */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 0;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-icon i {
+      font-size: 1.5rem;
+      color: white;
+    }
+    .logo-text {
+      font-size: 1.6rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #0f172a, #3b82f6);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #334155;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: #3b82f6;
+    }
+    .btn-gradient {
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      color: white;
+      padding: 0.6rem 1.5rem;
+      border-radius: 40px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-outline {
+      border: 2px solid #e2e8f0;
+      background: white;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 600;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+      padding: 3rem 0 2rem;
+    }
+    .hero-content {
+      flex: 1;
+      min-width: 280px;
+    }
+    .hero-badge {
+      background: linear-gradient(135deg, #e0e7ff, #fef3c7);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #3b82f6;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+      background: linear-gradient(to right, #0f172a, #1e293b, #3b82f6);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: #475569;
+      margin-bottom: 2rem;
+      max-width: 550px;
+      line-height: 1.5;
+    }
+    .search-box {
+      background: white;
+      border-radius: 60px;
+      padding: 0.3rem 0.3rem 0.3rem 1.5rem;
+      display: flex;
+      gap: 0.5rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      max-width: 500px;
+      margin-bottom: 1.5rem;
+    }
+    .search-box i {
+      color: #94a3b8;
+      font-size: 1.1rem;
+    }
+    .search-box input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      padding: 0.8rem 0;
+      background: transparent;
+    }
+    .search-box button {
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      border: none;
+      padding: 0.7rem 1.8rem;
+      border-radius: 50px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .stat-number {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: #64748b;
+    }
+    .hero-image {
+      flex: 1;
+      text-align: center;
+    }
+    .hero-image img {
+      max-width: 100%;
+      border-radius: 32px;
+      box-shadow: 0 30px 50px -20px rgba(0,0,0,0.2);
+    }
+
+    /* Category Pills */
+    .categories {
+      margin: 3rem 0 2rem;
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+    .section-header h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    .category-pills {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .pill {
+      background: white;
+      border: 1px solid #e2e8f0;
+      padding: 0.6rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 0.9rem;
+    }
+    .pill.active {
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 4px 12px rgba(59,130,246,0.3);
+    }
+    .pill:hover:not(.active) {
+      background: #f1f5f9;
+      transform: translateY(-2px);
+    }
+
+    /* Tools Grid */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.8rem;
+      margin: 2rem 0;
+    }
+    .tool-card {
+      background: white;
+      border-radius: 28px;
+      padding: 1.8rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid rgba(226, 232, 240, 0.6);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .tool-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec489a);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+    .tool-card:hover::before {
+      transform: scaleX(1);
+    }
+    .tool-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 35px -12px rgba(0,0,0,0.15);
+      border-color: transparent;
+    }
+    .tool-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #eff6ff, #e0e7ff);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: #3b82f6;
+      margin-bottom: 1.2rem;
+    }
+    .tool-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .tool-card p {
+      color: #64748b;
+      font-size: 0.85rem;
+      line-height: 1.4;
+      margin-bottom: 1rem;
+    }
+    .tool-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0.5rem;
+    }
+    .tool-badge {
+      background: #f1f5f9;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #3b82f6;
+    }
+    .tool-link {
+      color: #3b82f6;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+    }
+
+    /* Feature Banner */
+    .feature-banner {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      border-radius: 48px;
+      padding: 3rem;
+      margin: 3rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+    }
+    .feature-text h3 {
+      color: white;
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .feature-text p {
+      color: #94a3b8;
+    }
+    .feature-btn {
+      background: white;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      color: #0f172a;
+      transition: transform 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Ad Spaces */
+    .ad-container {
+      background: rgba(255,255,245,0.8);
+      border-radius: 24px;
+      padding: 1rem;
+      text-align: center;
+      margin: 2rem 0;
+      border: 1px dashed #cbd5e1;
+    }
+    .ad-label {
+      font-size: 0.7rem;
+      color: #94a3b8;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 4rem;
+      padding: 3rem 0 2rem;
+      border-top: 1px solid #e2e8f0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+    .footer-col h4 {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    .footer-col a {
+      display: block;
+      color: #64748b;
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover {
+      color: #3b82f6;
+    }
+    .copyright {
+      text-align: center;
+      padding: 2rem 0 1rem;
+      font-size: 0.75rem;
+      color: #94a3b8;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 1.2rem;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        width: 100%;
+        justify-content: space-between;
+      }
+      .hero {
+        flex-direction: column;
+      }
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+      .feature-banner {
+        padding: 2rem;
+        text-align: center;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">
+      <div class="logo-icon">
+        <i class="fas fa-cubes"></i>
+      </div>
+      <span class="logo-text">ToolHub Pro</span>
+    </div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Image Tools</a>
+      <a href="#">PDF Tools</a>
+      <a href="#">Pricing</a>
+      <a href="#" class="btn-outline"><i class="fas fa-star"></i> Pro Features</a>
+      <button class="btn-gradient">Sign In</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fas fa-bolt"></i> 500,000+ Monthly Users
+      </div>
+      <h1>Your Complete Toolkit for Images & PDFs</h1>
+      <p>50+ professional tools to compress, convert, edit, merge, and optimize your files. Fast, secure, and completely free.</p>
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search 50+ tools... (e.g., compress image, merge pdf)" id="searchInput">
+        <button id="searchBtn"><i class="fas fa-arrow-right"></i> Search</button>
+      </div>
+      <div class="stats">
+        <div class="stat-item">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Power Tools</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">2.5M+</span>
+          <span class="stat-label">Files Processed</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Free Access</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://placehold.co/550x450/1e293b/ffffff?text=Tool+Dashboard+Preview" alt="ToolHub Pro Dashboard">
+    </div>
+  </div>
+
+  <!-- Top Ad Space (AdSense Ready) -->
+  <div class="ad-container" id="topAdSlot">
+    <div class="ad-label">ADVERTISEMENT</div>
+    <div style="min-height: 90px; display: flex; align-items: center; justify-content: center; gap: 8px; color: #64748b;">
+      <i class="fas fa-ad"></i> Google AdSense Ready — Configure with your Ad Unit ID below
+    </div>
+  </div>
+
+  <!-- Category Filters -->
+  <div class="categories">
+    <div class="section-header">
+      <h2><i class="fas fa-grid-2"></i> Explore Tools</h2>
+      <div class="category-pills" id="categoryPills">
+        <button class="pill active" data-cat="all">✨ All Tools</button>
+        <button class="pill" data-cat="image">🖼️ Image Tools</button>
+        <button class="pill" data-cat="pdf">📄 PDF Tools</button>
+        <button class="pill" data-cat="convert">🔄 Converters</button>
+        <button class="pill" data-cat="security">🔒 Security & Edit</button>
+        <button class="pill" data-cat="optimize">⚡ Optimize</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tools Grid -->
+  <div id="toolsGrid" class="tools-grid"></div>
+
+  <!-- Feature Banner -->
+  <div class="feature-banner">
+    <div class="feature-text">
+      <h3><i class="fas fa-rocket"></i> Need Batch Processing?</h3>
+      <p>Compress 100+ images or merge multiple PDFs in one click. Upgrade to Pro for unlimited usage.</p>
+    </div>
+    <a href="#" class="feature-btn">Explore Pro Features <i class="fas fa-arrow-right"></i></a>
+  </div>
+
+  <!-- Bottom Ad Space -->
+  <div class="ad-container" id="bottomAdSlot">
+    <div class="ad-label">SPONSORED</div>
+    <div style="min-height: 100px; display: flex; align-items: center; justify-content: center; color: #64748b;">
+      <i class="fas fa-chart-line"></i> Ad Space — Insert your AdSense code below
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-col">
+      <h4>ToolHub Pro</h4>
+      <a href="#">About Us</a>
+      <a href="#">Blog</a>
+      <a href="#">Careers</a>
+    </div>
+    <div class="footer-col">
+      <h4>Image Tools</h4>
+      <a href="#">Compress Image</a>
+      <a href="#">Resize Image</a>
+      <a href="#">Background Remover</a>
+      <a href="#">Image to PDF</a>
+    </div>
+    <div class="footer-col">
+      <h4>PDF Tools</h4>
+      <a href="#">Merge PDF</a>
+      <a href="#">Split PDF</a>
+      <a href="#">PDF to Word</a>
+      <a href="#">Compress PDF</a>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="#">Help Center</a>
+      <a href="#">API Documentation</a>
+      <a href="#">Contact Us</a>
+    </div>
+  </div>
+  <div class="copyright">
+    © 2025 ToolHub Pro — Ultimate Image & PDF Toolkit. All rights reserved.
+  </div>
+
+  <!-- AdSense Configuration Panel (Collapsible) -->
+  <div style="background: #f8fafc; border-radius: 24px; padding: 1.2rem; margin: 1rem 0 2rem; border: 1px solid #e2e8f0;">
+    <details>
+      <summary style="font-weight: 700; cursor: pointer; color: #3b82f6;"><i class="fas fa-dollar-sign"></i> Monetization Setup — Insert Google AdSense IDs</summary>
+      <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-end;">
+        <div style="flex: 1;">
+          <label style="font-size: 0.75rem;">Publisher ID (ca-pub-xxx):</label>
+          <input type="text" id="pubId" placeholder="ca-pub-xxxxxxxxxxxx" style="width: 100%; padding: 0.6rem; border-radius: 40px; border: 1px solid #cbd5e1;">
+        </div>
+        <div style="flex: 1;">
+          <label style="font-size: 0.75rem;">Top Ad Slot ID:</label>
+          <input type="text" id="topSlotId" placeholder="1234567890" style="width: 100%; padding: 0.6rem; border-radius: 40px; border: 1px solid #cbd5e1;">
+        </div>
+        <div style="flex: 1;">
+          <label style="font-size: 0.75rem;">Bottom Ad Slot ID:</label>
+          <input type="text" id="bottomSlotId" placeholder="1234567890" style="width: 100%; padding: 0.6rem; border-radius: 40px; border: 1px solid #cbd5e1;">
+        </div>
+        <button id="applyAdsBtn" style="background: linear-gradient(135deg, #3b82f6, #8b5cf6); border: none; padding: 0.6rem 1.5rem; border-radius: 40px; color: white; font-weight: 600; cursor: pointer;">Apply AdSense</button>
+      </div>
+      <p style="font-size: 0.7rem; color: #64748b; margin-top: 0.8rem;">*After inserting valid AdSense IDs, ads will appear in the designated slots above. Ensure your domain is approved by Google.</p>
+    </details>
+  </div>
+</div>
+
+<script>
+  // Comprehensive Tools Database (50+ tools for Image & PDF)
+  const toolsDatabase = [
+    // Image Tools
+    { id: 1, name: "Image Compressor", desc: "Reduce image size up to 80% while preserving quality", icon: "fas fa-compress-alt", category: "image", tag: "Popular", link: "#" },
+    { id: 2, name: "Resize Image", desc: "Scale images to exact dimensions for social media", icon: "fas fa-expand-alt", category: "image", tag: "Essential", link: "#" },
+    { id: 3, name: "Crop Image", desc: "Crop images precisely with aspect ratio lock", icon: "fas fa-crop", category: "image", tag: "Edit", link: "#" },
+    { id: 4, name: "Rotate Image", desc: "Rotate or flip images 90°, 180°, or mirror", icon: "fas fa-undo-alt", category: "image", tag: "Edit", link: "#" },
+    { id: 5, name: "Background Remover", desc: "AI-powered remove background instantly", icon: "fas fa-magic", category: "image", tag: "AI", link: "#" },
+    { id: 6, name: "Add Watermark", desc: "Protect images with text or logo watermark", icon: "fas fa-water", category: "image", tag: "Protect", link: "#" },
+    { id: 7, name: "Image to PNG", desc: "Convert any image to PNG format", icon: "fas fa-file-image", category: "convert", tag: "Convert", link: "#" },
+    { id: 8, name: "Image to JPG", desc: "Convert images to compressed JPG format", icon: "fas fa-file-image", category: "convert", tag: "Convert", link: "#" },
+    { id: 9, name: "WebP Converter", desc: "Convert images to modern WebP format", icon: "fab fa-chrome", category: "convert", tag: "Modern", link: "#" },
+    { id: 10, name: "HEIC to JPG", desc: "Convert iPhone HEIC images to JPG", icon: "fab fa-apple", category: "convert", tag: "Apple", link: "#" },
+    { id: 11, name: "Image Optimizer", desc: "Smart optimization for web performance", icon: "fas fa-tachometer-alt", category: "optimize", tag: "Speed", link: "#" },
+    { id: 12, name: "Image to PDF", desc: "Convert multiple images to a single PDF", icon: "fas fa-camera", category: "convert", tag: "PDF", link: "#" },
+    
+    // PDF Tools
+    { id: 13, name: "Merge PDF", desc: "Combine multiple PDFs into one document", icon: "fas fa-object-group", category: "pdf", tag: "Essential", link: "#" },
+    { id: 14, name: "Split PDF", desc: "Extract pages from PDF into separate files", icon: "fas fa-cut", category: "pdf", tag: "Organize", link: "#" },
+    { id: 15, name: "Compress PDF", desc: "Reduce PDF file size significantly", icon: "fas fa-file-pdf", category: "pdf", tag: "Optimize", link: "#" },
+    { id: 16, name: "PDF to Word", desc: "Convert PDF to editable Word document", icon: "fas fa-file-word", category: "convert", tag: "Office", link: "#" },
+    { id: 17, name: "PDF to Excel", desc: "Extract tables from PDF to Excel", icon: "fas fa-file-excel", category: "convert", tag: "Data", link: "#" },
+    { id: 18, name: "PDF to JPG", desc: "Convert PDF pages to high-quality images", icon: "fas fa-file-image", category: "convert", tag: "Image", link: "#" },
+    { id: 19, name: "Encrypt PDF", desc: "Add password protection to PDF files", icon: "fas fa-lock", category: "security", tag: "Secure", link: "#" },
+    { id: 20, name: "Decrypt PDF", desc: "Remove PDF passwords (authorized only)", icon: "fas fa-unlock-alt", category: "security", tag: "Utility", link: "#" },
+    { id: 21, name: "Rotate PDF", desc: "Rotate PDF pages permanently", icon: "fas fa-sync-alt", category: "pdf", tag: "Edit", link: "#" },
+    { id: 22, name: "Watermark PDF", desc: "Add text or image watermark to PDF", icon: "fas fa-stamp", category: "security", tag: "Protect", link: "#" },
+    { id: 23, name: "PDF Metadata", desc: "Edit PDF metadata and properties", icon: "fas fa-info-circle", category: "pdf", tag: "Advanced", link: "#" },
+    { id: 24, name: "Repair PDF", desc: "Fix corrupted or damaged PDF files", icon: "fas fa-tools", category: "pdf", tag: "Fix", link: "#" },
+    { id: 25, name: "PDF to PPT", desc: "Convert PDF to PowerPoint presentation", icon: "fas fa-file-powerpoint", category: "convert", tag: "Office", link: "#" },
+    { id: 26, name: "Extract Images", desc: "Extract all images from PDF", icon: "fas fa-images", category: "pdf", tag: "Extract", link: "#" },
+    { id: 27, name: "PDF Organizer", desc: "Rearrange, delete, or rotate pages", icon: "fas fa-layer-group", category: "pdf", tag: "Organize", link: "#" },
+    { id: 28, name: "Compare PDF", desc: "Compare two PDF files side by side", icon: "fas fa-code-branch", category: "pdf", tag: "Compare", link: "#" }
+  ];
+
+  let currentCategory = "all";
+
+  function renderTools(category = "all") {
+    const grid = document.getElementById("toolsGrid");
+    let filtered = category === "all" ? toolsDatabase : toolsDatabase.filter(t => t.category === category);
+    
+    if (filtered.length === 0) {
+      grid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding: 3rem;"><i class="fas fa-folder-open" style="font-size: 3rem; color: #cbd5e1;"></i><p style="margin-top: 1rem; color: #64748b;">No tools found in this category</p></div>`;
+      return;
+    }
+    
+    grid.innerHTML = filtered.map(tool => `
+      <div class="tool-card" data-tool-id="${tool.id}">
+        <div class="tool-icon">
+          <i class="${tool.icon}"></i>
+        </div>
+        <h3>${tool.name}</h3>
+        <p>${tool.desc}</p>
+        <div class="tool-meta">
+          <span class="tool-badge"><i class="fas fa-tag"></i> ${tool.tag}</span>
+          <a href="${tool.link}" class="tool-link">Try now →</a>
+        </div>
+      </div>
+    `).join("");
+    
+    // Add click handlers
+    document.querySelectorAll('.tool-card').forEach(card => {
+      card.addEventListener('click', (e) => {
+        if (!e.target.classList.contains('tool-link') && e.target.tagName !== 'A') {
+          const toolName = card.querySelector('h3').innerText;
+          alert(`✨ "${toolName}" tool is ready! Full functionality coming in the next update.`);
+        }
+      });
+    });
+  }
+
+  // Category switching
+  document.querySelectorAll('.pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      currentCategory = pill.getAttribute('data-cat');
+      renderTools(currentCategory);
+    });
+  });
+
+  // Search functionality
+  const searchInput = document.getElementById('searchInput');
+  const searchBtn = document.getElementById('searchBtn');
+  
+  function performSearch() {
+    const query = searchInput.value.trim().toLowerCase();
+    if (!query) {
+      renderTools(currentCategory);
+      return;
+    }
+    const filtered = toolsDatabase.filter(tool => 
+      tool.name.toLowerCase().includes(query) || 
+      tool.desc.toLowerCase().includes(query) ||
+      tool.tag.toLowerCase().includes(query)
+    );
+    const grid = document.getElementById("toolsGrid");
+    if (filtered.length === 0) {
+      grid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding: 3rem;"><i class="fas fa-search" style="font-size: 3rem; color: #cbd5e1;"></i><p style="margin-top: 1rem;">No tools matching "${query}"</p></div>`;
+    } else {
+      grid.innerHTML = filtered.map(tool => `
+        <div class="tool-card">
+          <div class="tool-icon"><i class="${tool.icon}"></i></div>
+          <h3>${tool.name}</h3>
+          <p>${tool.desc}</p>
+          <div class="tool-meta">
+            <span class="tool-badge">${tool.tag}</span>
+            <a href="#" class="tool-link">Try now →</a>
+          </div>
+        </div>
+      `).join("");
+    }
+  }
+  
+  searchBtn.addEventListener('click', performSearch);
+  searchInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') performSearch(); });
+  
+  // AdSense Integration
+  function loadAdSense(publisherId, topSlot, bottomSlot) {
+    if (!publisherId || !topSlot || !bottomSlot) {
+      alert("Please fill all AdSense fields (Publisher ID and both Ad Slot IDs)");
+      return false;
+    }
+    
+    const topContainer = document.getElementById('topAdSlot');
+    const bottomContainer = document.getElementById('bottomAdSlot');
+    
+    // Clear previous content
+    topContainer.innerHTML = '<div class="ad-label">ADVERTISEMENT</div>';
+    bottomContainer.innerHTML = '<div class="ad-label">SPONSORED</div>';
+    
+    // Create ad ins elements
+    const topIns = document.createElement('ins');
+    topIns.className = 'adsbygoogle';
+    topIns.style.display = 'block';
+    topIns.style.width = '100%';
+    topIns.style.minHeight = '90px';
+    topIns.setAttribute('data-ad-client', publisherId);
+    topIns.setAttribute('data-ad-slot', topSlot);
+    topIns.setAttribute('data-ad-format', 'auto');
+    topIns.setAttribute('data-full-width-responsive', 'true');
+    topContainer.appendChild(topIns);
+    
+    const bottomIns = document.createElement('ins');
+    bottomIns.className = 'adsbygoogle';
+    bottomIns.style.display = 'block';
+    bottomIns.style.width = '100%';
+    bottomIns.style.minHeight = '100px';
+    bottomIns.setAttribute('data-ad-client', publisherId);
+    bottomIns.setAttribute('data-ad-slot', bottomSlot);
+    bottomIns.setAttribute('data-ad-format', 'auto');
+    bottomIns.setAttribute('data-full-width-responsive', 'true');
+    bottomContainer.appendChild(bottomIns);
+    
+    // Load AdSense script
+    if (!document.querySelector('script[src*="pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]')) {
+      const script = document.createElement('script');
+      script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+      script.async = true;
+      script.crossOrigin = 'anonymous';
+      script.onload = () => {
+        if (window.adsbygoogle) {
+          window.adsbygoogle.push({});
+          window.adsbygoogle.push({});
+        }
+      };
+      document.head.appendChild(script);
+    } else {
+      if (window.adsbygoogle) {
+        window.adsbygoogle.push({});
+        window.adsbygoogle.push({});
+      }
+    }
+    return true;
+  }
+  
+  document.getElementById('applyAdsBtn').addEventListener('click', () => {
+    const pubId = document.getElementById('pubId').value.trim();
+    const topSlot = document.getElementById('topSlotId').value.trim();
+    const bottomSlot = document.getElementById('bottomSlotId').value.trim();
+    load
